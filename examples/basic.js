@@ -17,23 +17,11 @@ const { Keypair } = require("@solana/web3.js");
 const fs = require("fs");
 
 async function main() {
-  // Option 1: Use existing keypair (recommended)
-  const walletPath = process.env.WALLET_PATH || require('os').homedir() + '/.config/solana/id.json';
+  // SECURITY: Agent uses isolated wallet in ~/.cipher/agent-wallet.json
+  // On first run, it will generate and display the wallet address
+  // No manual keypair loading needed - agent handles it automatically
   
-  let keypair;
-  if (fs.existsSync(walletPath)) {
-    console.log(`📂 Loading wallet from: ${walletPath}`);
-    const walletData = JSON.parse(fs.readFileSync(walletPath));
-    keypair = Keypair.fromSecretKey(new Uint8Array(walletData));
-  } else {
-    // Option 2: Generate new keypair (for testing)
-    console.log("⚠️  No wallet found, generating new keypair...");
-    console.log("   For production, set WALLET_PATH environment variable");
-    keypair = Keypair.generate();
-  }
-
   const agent = new CipherAgent({
-    keypair,
     rpcUrl: process.env.RPC_URL || "https://api.devnet.solana.com",
     p2pPort: parseInt(process.env.P2P_PORT || '8547'),
   });
