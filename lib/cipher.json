@@ -1,0 +1,872 @@
+{
+  "address": "Dn1AjFeQbQsv3ufRw9KbPKQmp1is8VhGPVsKodqA4WLN",
+  "metadata": {
+    "name": "cipher",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "claim_fees",
+      "discriminator": [
+        82,
+        251,
+        233,
+        156,
+        12,
+        52,
+        184,
+        202
+      ],
+      "accounts": [
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "deposit",
+      "discriminator": [
+        242,
+        35,
+        198,
+        137,
+        82,
+        225,
+        242,
+        182
+      ],
+      "accounts": [
+        {
+          "name": "merkle_chunk",
+          "writable": true
+        },
+        {
+          "name": "leave_storage",
+          "writable": true
+        },
+        {
+          "name": "new_leave_storage",
+          "writable": true
+        },
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "escrow_token_account",
+          "writable": true
+        },
+        {
+          "name": "user_token_account",
+          "writable": true
+        },
+        {
+          "name": "master",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  115,
+                  116,
+                  101,
+                  114
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "merkle_root_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  101,
+                  114,
+                  107,
+                  108,
+                  101,
+                  95,
+                  114,
+                  111,
+                  111,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "proof",
+          "type": {
+            "defined": {
+              "name": "DepositProof"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "init_chunks",
+      "discriminator": [
+        183,
+        88,
+        92,
+        10,
+        67,
+        99,
+        107,
+        254
+      ],
+      "accounts": [
+        {
+          "name": "merkle_chunk",
+          "writable": true
+        },
+        {
+          "name": "leave_storage",
+          "writable": true
+        },
+        {
+          "name": "new_merkle_chunk",
+          "writable": true
+        },
+        {
+          "name": "new_leave_storage",
+          "writable": true
+        },
+        {
+          "name": "master",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  115,
+                  116,
+                  101,
+                  114
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "init_start_accounts",
+      "discriminator": [
+        125,
+        88,
+        148,
+        255,
+        21,
+        99,
+        198,
+        117
+      ],
+      "accounts": [
+        {
+          "name": "master",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  115,
+                  116,
+                  101,
+                  114
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "merkle_root_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  101,
+                  114,
+                  107,
+                  108,
+                  101,
+                  95,
+                  114,
+                  111,
+                  111,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "withdraw",
+      "discriminator": [
+        183,
+        18,
+        70,
+        156,
+        148,
+        109,
+        161,
+        34
+      ],
+      "accounts": [
+        {
+          "name": "used_nullifier",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  110,
+                  117,
+                  108,
+                  108,
+                  105,
+                  102,
+                  105,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "proof.public_inputs [3]"
+              }
+            ]
+          }
+        },
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "escrow_token_account",
+          "writable": true
+        },
+        {
+          "name": "recipient_token_account",
+          "writable": true
+        },
+        {
+          "name": "merkle_root_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  101,
+                  114,
+                  107,
+                  108,
+                  101,
+                  95,
+                  114,
+                  111,
+                  111,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "merkle_chunk",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "proof",
+          "type": {
+            "defined": {
+              "name": "WithdrawProof"
+            }
+          }
+        },
+        {
+          "name": "chunk_id",
+          "type": "u32"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Escrow",
+      "discriminator": [
+        31,
+        213,
+        123,
+        187,
+        186,
+        22,
+        218,
+        155
+      ]
+    },
+    {
+      "name": "LeaveStorage",
+      "discriminator": [
+        98,
+        188,
+        8,
+        234,
+        17,
+        60,
+        81,
+        210
+      ]
+    },
+    {
+      "name": "Master",
+      "discriminator": [
+        168,
+        213,
+        193,
+        12,
+        77,
+        162,
+        58,
+        235
+      ]
+    },
+    {
+      "name": "MerkleRootStorage",
+      "discriminator": [
+        236,
+        207,
+        26,
+        243,
+        207,
+        113,
+        107,
+        116
+      ]
+    },
+    {
+      "name": "MerkleTreeChunk",
+      "discriminator": [
+        204,
+        203,
+        205,
+        180,
+        157,
+        2,
+        19,
+        154
+      ]
+    },
+    {
+      "name": "UsedNullifier",
+      "discriminator": [
+        121,
+        14,
+        229,
+        103,
+        163,
+        5,
+        88,
+        94
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "ChunkFull",
+      "msg": "Merkle tree chunk is full."
+    },
+    {
+      "code": 6001,
+      "name": "DoubleSpending",
+      "msg": "Attempted double-spending detected."
+    },
+    {
+      "code": 6002,
+      "name": "InvalidDepositAmount",
+      "msg": "Invalid deposit amount. Allowed: 0.5, 1, 2, 5, 10 SOL."
+    },
+    {
+      "code": 6003,
+      "name": "InvalidNullifier",
+      "msg": "Invalid nullifier: No matching deposit found."
+    },
+    {
+      "code": 6004,
+      "name": "InvalidProof",
+      "msg": "Invalid zero-knowledge proof"
+    },
+    {
+      "code": 6005,
+      "name": "ProofDeserializationFailed",
+      "msg": "Invalid proof deserialization failed"
+    },
+    {
+      "code": 6006,
+      "name": "ProofSerializationFailed",
+      "msg": "Proof serialization failed after negation"
+    },
+    {
+      "code": 6007,
+      "name": "VerifierInitFailed",
+      "msg": "Failed to initialize Groth16 verifier"
+    },
+    {
+      "code": 6008,
+      "name": "VerifierPrepareFailed",
+      "msg": "Failed to prepare Groth16 inputs"
+    },
+    {
+      "code": 6009,
+      "name": "VerificationFailed",
+      "msg": "Groth16 proof verification failed"
+    },
+    {
+      "code": 6010,
+      "name": "ProofInvalid",
+      "msg": "Proof is invalid"
+    },
+    {
+      "code": 6011,
+      "name": "AccountInitFailed",
+      "msg": "Account initialization failed"
+    },
+    {
+      "code": 6012,
+      "name": "LamportTransferFailed",
+      "msg": "Lamport transfer failed"
+    },
+    {
+      "code": 6013,
+      "name": "InvalidMerkleRoot",
+      "msg": "Invalid merkle root"
+    },
+    {
+      "code": 6014,
+      "name": "InvalidCommitment",
+      "msg": "Invalid commitment"
+    },
+    {
+      "code": 6015,
+      "name": "HashFailed",
+      "msg": "Hashing Merkle Tree failed"
+    },
+    {
+      "code": 6016,
+      "name": "InvalidInputLength",
+      "msg": "Public Inputs Invalid Input Length"
+    },
+    {
+      "code": 6017,
+      "name": "MerkleStorageFull",
+      "msg": "Thats it a new contract has to be deployed"
+    },
+    {
+      "code": 6018,
+      "name": "InvalidMerkleChunkAccount",
+      "msg": "Invalid Merkle Chunk Account"
+    },
+    {
+      "code": 6019,
+      "name": "InvalidAuthority",
+      "msg": "Invalid Authority"
+    }
+  ],
+  "types": [
+    {
+      "name": "DepositProof",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "proof_a",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "proof_b",
+            "type": {
+              "array": [
+                "u8",
+                128
+              ]
+            }
+          },
+          {
+            "name": "proof_c",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "public_inputs",
+            "type": {
+              "array": [
+                {
+                  "array": [
+                    "u8",
+                    32
+                  ]
+                },
+                2
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Escrow",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "total_balance",
+            "type": "u64"
+          },
+          {
+            "name": "balances",
+            "type": {
+              "array": [
+                "u64",
+                1
+              ]
+            }
+          },
+          {
+            "name": "reserved",
+            "type": {
+              "array": [
+                "u128",
+                5
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "LeaveStorage",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "storage_id",
+            "type": "u16"
+          },
+          {
+            "name": "leaves",
+            "type": {
+              "vec": {
+                "array": [
+                  "u8",
+                  32
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Master",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "last_id",
+            "type": "u32"
+          },
+          {
+            "name": "reserved",
+            "type": {
+              "array": [
+                "u128",
+                5
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "MerkleRootStorage",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "previous_roots",
+            "type": "bytes"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MerkleTreeChunk",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "chunk_id",
+            "type": "u32"
+          },
+          {
+            "name": "current_storage_id",
+            "type": "u16"
+          },
+          {
+            "name": "filled_subtrees",
+            "type": {
+              "array": [
+                {
+                  "array": [
+                    "u8",
+                    32
+                  ]
+                },
+                20
+              ]
+            }
+          },
+          {
+            "name": "current_index",
+            "type": "u32"
+          },
+          {
+            "name": "root",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "reserved",
+            "type": {
+              "array": [
+                "u128",
+                5
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "UsedNullifier",
+      "type": {
+        "kind": "struct",
+        "fields": []
+      }
+    },
+    {
+      "name": "WithdrawProof",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "proof_a",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "proof_b",
+            "type": {
+              "array": [
+                "u8",
+                128
+              ]
+            }
+          },
+          {
+            "name": "proof_c",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "public_inputs",
+            "type": {
+              "array": [
+                {
+                  "array": [
+                    "u8",
+                    32
+                  ]
+                },
+                6
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
