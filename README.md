@@ -205,6 +205,36 @@ See `/examples` folder:
 
 ---
 
+## 🔒 Security
+
+### Production Recommendations
+
+**File Permissions:**
+```bash
+chmod 700 ~/.cipher/
+chmod 600 ~/.cipher/deposits.json
+chmod 600 ~/.config/solana/id.json  # Your keypair
+```
+
+**Network Security:**
+- Use VPN or Tor for P2P communication (no TLS yet)
+- Run behind firewall with port forwarding only for P2P port
+- Don't expose relayer endpoint to public internet
+
+**Operational Security:**
+- Enable DEBUG mode only in safe environments
+- Regular backups of `~/.cipher/deposits.json`
+- Monitor for suspicious peer activity
+
+**Known Limitations:**
+- No TLS encryption for P2P traffic (use VPN!)
+- DHT has basic validation only (not production-grade yet)
+- Storage encryption not yet implemented
+
+See `SECURITY-REVIEW.md` for detailed security audit findings.
+
+---
+
 ## ⚠️ Disclaimer
 
 **This is experimental software. Use at your own risk.**
